@@ -41,6 +41,3 @@ It IS:
 No build tools. No npm. No config files.
 
 ---
-
-## File Structure
-
