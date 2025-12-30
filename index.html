@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScriptSeekers Writings</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #0f0f0f;
+      color: #f2f2f2;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 40px;
+      letter-spacing: 1px;
+      font-size: 28px;
+      padding: 0 10px;
+    }
+
+    .card {
+      border-bottom: 1px solid #333;
+      padding: 25px 0;
+      margin: 0 10px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .summary {
+      color: #aaa;
+      font-style: italic;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      padding-left: 10px;
+      border-left: 2px solid #444;
+    }
+
+    button {
+      background: transparent;
+      color: #ffb347;
+      border: 1px solid #ffb347;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 5px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      min-width: 80px;
+    }
+
+    button:hover {
+      background: #ffb347;
+      color: #000;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .content {
+      display: none;
+      white-space: pre-line;
+      margin-top: 20px;
+      line-height: 1.8;
+      color: #e6e6e6;
+      padding-left: 10px;
+      border-left: 1px solid #333;
+      font-size: 16px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+      
+      h1 {
+        font-size: 24px;
+        margin: 20px 0 30px;
+        padding: 0 5px;
+      }
+      
+      .card {
+        padding: 20px 0;
+        margin: 0 5px;
+      }
+      
+      .title {
+        font-size: 18px;
+      }
+      
+      .summary {
+        font-size: 13px;
+        padding-left: 8px;
+        margin-bottom: 12px;
+      }
+      
+      button {
+        padding: 7px 16px;
+        font-size: 14px;
+      }
+      
+      .content {
+        font-size: 15px;
+        line-height: 1.7;
+        padding-left: 8px;
+      }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px 5px;
+      }
+      
+      h1 {
+        font-size: 22px;
+        margin: 15px 0 25px;
+        letter-spacing: 0.5px;
+      }
+      
+      .card {
+        padding: 18px 0;
+      }
+      
+      .title {
+        font-size: 17px;
+      }
+      
+      .summary {
+        font-size: 12px;
+        padding-left: 6px;
+        border-left-width: 1px;
+      }
+      
+      button {
+        padding: 6px 14px;
+        font-size: 13px;
+        min-width: 70px;
+      }
+      
+      .content {
+        font-size: 14px;
+        line-height: 1.6;
+        padding-left: 6px;
+      }
+    }
+
+    /* For very small screens */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 20px;
+      }
+      
+      .title {
+        font-size: 16px;
+      }
+      
+      button {
+        padding: 5px 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Improve readability on all screens */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #f5f5f5;
+        color: #222;
+      }
+      
+      .card {
+        border-bottom-color: #ddd;
+      }
+      
+      .summary {
+        color: #666;
+        border-left-color: #ccc;
+      }
+      
+      .content {
+        color: #333;
+        border-left-color: #ddd;
+      }
+      
+      button {
+        color: #ff8c00;
+        border-color: #ff8c00;
+      }
+      
+      button:hover {
+        background: #ff8c00;
+        color: #fff;
+      }
+    }
+
+    /* Smooth scrolling for better mobile experience */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Touch-friendly tap targets */
+    @media (hover: none) and (pointer: coarse) {
+      button {
+        padding: 10px 22px;
+        min-height: 44px;
+      }
+      
+      .card {
+        padding: 22px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>My Writings</h1>
+
+<!-- 1 -->
+<div class="card">
+  <div class="title">Ishq Ki Aag</div>
+  <div class="summary">A confession of love so intense it turns devotion into self-destruction—where the heart worships instead of choosing, and love burns more than it heals.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Maine pucha apne Ishq se,
+“Kya main kar sakta hoon tumhari fikar?”
+Ishq ne dhadkan chhoo kar kaha,
+“Jo tumhara dil chahe, wahi sachkar.”
+
+Dil ne cheekh kar kaha,
+“Main tumhara hona chahta hoon…
+Poora, bina kisi bhi shart ke.”
+
+Par main dil de na saka,
+Kyuki yeh bechaara dil
+Tumhari har ada, har nazakat ko
+Bhagwan ki tarah chahne laga hai.
+
+Ab halat yeh hai
+Mera dil bhi Ishq ki tarah
+Tum par hi jalta,
+Tum par hi pighalta,
+Tum par hi bikhar raha hai.
+
+Ki chandi sona ek taraf,
+aur tera hona ek taraf.
+Ek taraf teri aankhen,
+jaadu tona ek taraf.
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+  <div class="title">Prem Ki Kavita</div>
+  <div class="summary">A quiet, poetic metaphor for love that is expressed through absence, pauses, and interpretation—where meaning depends on how deeply the reader feels.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Priya likhakar niche likh du naam tumhara,
+kuch jagah beech me chhod,
+niche likh dun sada tumhara.
+
+Likha beech me kya,
+yeh tumko padhna hai,
+kagaz par man ki bhasha ka
+artha samajhna hai.
+
+Jo bhi artha nikalogi tum,
+wah mujhko swikar;
+jhuke adhar, jhuke nayan,
+maun adhar ya kora kagaz —
+artha sabhi ka pyar.
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+  <div class="title">Love & Fight</div>
+  <div class="summary">A blunt reminder that love without courage is just comfort—real love demands effort, resistance, and the willingness to stand your ground.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+If you're a lover,
+you gotta be a fighter.
+Because if you don't fight for your love,
+what kind of love do you have?
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+  <div class="title">Everything Is Yours</div>
+  <div class="summary">Total emotional surrender in its purest form—short, direct, and dangerously absolute.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+You are the love of my life.
+Everything I have.
+And everything I am.
+Is yours.
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+  <div class="title">Dono Ke Beech</div>
+  <div class="summary">A story of mutual feelings trapped in silence, where both hearts know the truth but fear timing more than regret.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Na tu bola, na main,
+par har lafz ke beech kuch tha.
+Hawa bhi jaanti thi,
+ke khamoshi mein ishq sa kuch tha.
+
+Tere dekhne ka andaaz,
+aur mera nazar jhuka lena,
+ye dono adhoori baatein,
+par dil ka keh jaana.
+
+Kisi ne poocha, “kuch chal raha hai?”
+hum dono muskura diye,
+ek jaise jazbaat the dono ke,
+bas alfaaz kahaan diye?
+
+Tu bhi samajhta tha,
+main bhi mehsoos karti thi,
+par dono ne khud se kaha,
+“abhi waqt nahi, bas yehi sahi.”
+
+Aur waqt guzarta gaya,
+par wo ehsaas wahi tha
+na izhaar hua, na inkaar,
+par pyaar… dono ke dilon mein wahi tha. ❤️
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+  <div class="title">The First Time I Saw Her</div>
+  <div class="summary">An internal battle between hope and restraint—about falling for someone slowly, honestly, and not knowing whether to risk friendship for truth.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+The first time I saw her,
+the world slowed down for a breath.
+I was on the field sweat, dust, and nightlight
+and there she stood,
+in a white jacket and black jeans,
+composed, distant, whispering to her phone,
+as if the universe bowed quietly to her calm.
+
+I don't know why,
+but something inside me stirred that day
+a pull, a quiet ache.
+She felt like a story I could never belong to,
+someone far beyond my reach,
+a league I could only dream of entering.
+
+Four years slipped by like passing clouds,
+and now, she talks to me.
+Sometimes we walk,
+side by side, under evening skies,
+and I swear,
+she feels almost like my type
+maybe even more.
+
+I've never lied to her,
+not once
+my heart's been an open page.
+But hers?
+I can't read it yet.
+
+And now I stand here, torn
+should I keep this fragile friendship,
+or risk it all,
+and let love take its chance?
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+  <div class="title">Ishq Ki Badnaami</div>
+  <div class="summary">A critique of modern love, defending quiet, unspoken devotion in a world that mistakes noise for depth.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Kehte hain mujhe kya pata ishq kya hota hai,
+arre yeh kambakht ishq hi toh badnaam hota hai.
+Aaj ke log kya samjhein mohabbat ka junoon,
+Jo khamoshi se chaahe, jo naa keh ke bhi kehna chaahe
+wahi asar-daam hota hai.
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+  <div class="title">Hamesha</div>
+  <div class="summary">A grounded take on lifelong friendship—less about promises, more about consistency, presence, and remembering each other despite life.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Forever dosti koi vaada nahi,
+ek choti si zimmedaari hoti hai.
+Hum chahe pehli priority na bane,
+par ek priority zaroor hote hain.
+
+Zindagi sabko busy karti hai,
+raaste alag-alag mod leti hain.
+Phir bhi asli dosti tab dikhti hai
+jab hum yaad rakhte hain
+ki koi humara bhi hai.
+
+Na roz ki baatein zaroori,
+na har pal saath rehna.
+Bas kabhi-kabhi ek message,
+ek smile, ek "tu theek hai na?"
+
+Forever dosti ka raaz yahi hai
+ki hum perfect nahi hote,
+par phir bhi ek dusre ko
+apni priorities mein
+kahin na kahin rakhe rehte hain.
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+  <div class="title">U</div>
+  <div class="summary">A playful yet emotional wordplay showing how love turns one person into the missing piece of everything meaningful.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+How can I "LA_GH" without "U"
+How can I "TR_ST" without "U"
+How can I "H_G" without "U"
+How can I have "F_N" without "U"
+How can I have a "F_TURE" without "U"
+My "SO_L" is incomplete without "U"
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+  <div class="title">I'll Wait</div>
+  <div class="summary">A raw admission of emotional dependence—hopeful, loyal, but walking the thin line between faith and self-loss.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+God is not letting me forget about you and me.
+Every single day I miss you, I feel alone without you.
+I don't know what is going on in my mind,
+I just know that you're the love of my life.
+So I'll wait for you, and I know that one day
+we will be together and live happily....
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+  <div class="title">Ek Ladka Hai</div>
+  <div class="summary">An unapologetic declaration of one-sided love, vulnerability, and emotional exposure—ending with a direct reveal.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Ek Ladka Hai Jo Tumse Bohot Pyar Karta Hai
+Ek Ladka Hai Jo Tumhe Bohot Yaad Karta Hai
+Ek Ladka Hai Jo Darta Hai Tumhe Khone Se
+Ek Ladka Hai Jo Darta Hai Tumhare Rone Se
+Ek Ladka Hai Jo Dil Ki Tumhe Keh Nahi Paata
+Ek Ladka Hai Jo Tere Bagair Reh Nahi Paata
+Ek Ladka Hai Jo Tumhe Paane Ko Tarsta Hai
+Ek Ladka Hai Jo Tumhe Dekh Kar Hasta Hai
+Ek Ladka Hai Jo Khudko Tumhara Kehta Hai
+Ek Ladka Hai Jo Tujhe Sabse Pyara Kehta Hai
+Ek Ladka Hai Jiski Tu Mohabat Hai Jaan Hai
+Ek Ladka Hai Jo Tere Liye Rehta Pareshan Hai
+Uss Ladke Se Abhi Tak, Be Khabar Hai Tu
+Woh Ladka Haaye Woh Ladka,
+Main Hi Hoon.
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+  <div class="title">Ek Ladka Tha</div>
+  <div class="summary">A continuation, but wiser—about growth after heartbreak, choosing self-respect, and redefining love without erasing the past.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Ek ladka tha jo kabhi tumse bohot pyaar karta tha
+Ek ladka tha jo har roz tumhe yaad karta tha
+Ek ladka tha jo khone se darta rehta tha
+Aur tumhare rone ka bojh khud pe sehta tha
+
+Ek ladka tha jo dil ki baat keh nahi paaya
+Aur chup rehkar khud ko hi haar gaya
+Ek ladka tha jo tumhare bina reh nahi paata tha
+Aur isi aadat ne use kamzor bana diya tha
+
+Ek ladka tha jo paane ko tarasta raha
+Aur tumhe dekh kar bhi sirf hasta raha
+Ek ladka tha jo khud ko tumhara maanta tha
+Aur tumhe apni duniya jaanta tha
+
+Par waqt ne use ek baat sikha di
+Ki mohabbat sirf mehsoos karna kaafi nahi hota
+Ek din usne khud ko chunte hue dekha
+Aur samajh gaya har kahani ka ant rona nahi hota
+
+Ab ek ladka hai
+Jo yaad toh karta hai, par rukta nahi
+Jo darta nahi, jo toot kar bikta nahi
+Jo tumhe apni kahani ka hissa maanta hai
+Par poori kahani nahi
+Tum ab bhi ho yaadon mein, sach hai
+Par jagah badal chuki hai
+
+Woh ladka jo kabhi "main hi hoon" kehta tha
+Aaj bas itna kehta hai
+"Main tha."
+  </div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+  <div class="title">Can I</div>
+  <div class="summary">A gentle request for forever, built on presence, patience, and emotional safety rather than grand promises.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+Can I hold your hand,
+not just today, but through every storm and sunrise?
+& Can I be the one who listens to your silence and still understands?
+Can I stay
+when the world feels too heavy, and remind you how light love can feel?
+Can I love you in all the little ways in every glance, every word, every heartbeat-
+for as long as forever remembers us?
+  </div>
+</div>
+
+<!-- 14 -->
+<div class="card">
+  <div class="title">4, 3, 2, 1</div>
+  <div class="summary">A minimalist expression of timeless love—reducing time itself to a single constant: everyday.</div>
+  <button onclick="toggle(this)">Read</button>
+  <div class="content">
+I can love you for 4 days
+Summer day, Winter day, Rainy day, Autumn day.
+May be 3 days
+Yesterday, Today, Tomorrow.
+No it should be 2 times
+Day & Night.
+May be 1 day
+Everyday.
+  </div>
+</div>
+<footer>
+  <div class="footer-bottom">
+    <p>© <span id="current-year">2025</span> ScriptSeekers Writings | Words from the heart</p>
+    <p class="footer-quote">"Some feelings are best expressed through poetry"</p>
+  </div>
+</footer>
+<script>
+  function toggle(btn) {
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
+    btn.innerText = content.style.display === "block" ? "Hide" : "Read";
+    
+    // Smooth scroll to show more content on mobile
+    if (content.style.display === "block" && window.innerWidth < 768) {
+      content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  // Improve mobile experience
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add touch feedback for buttons
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(0.98)';
+      });
+      btn.addEventListener('touchend', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
