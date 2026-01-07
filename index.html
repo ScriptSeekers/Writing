@@ -11,6 +11,21 @@
       box-sizing: border-box;
     }
 
+    .nav-buttons {
+      position: fixed;
+      right: 15px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .nav-buttons button {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+    }
+
     body {
       font-family: Georgia, serif;
       background: #0f0f0f;
@@ -656,6 +671,12 @@ But she has always loved blue.
     <p class="footer-quote">"Some feelings are best expressed through poetry"</p>
   </div>
 </footer>
+
+<div class="nav-buttons">
+  <button onclick="goTop()">↑ First</button>
+  <button onclick="goBottom()">↓ Latest</button>
+</div>
+
 <script>
   function toggle(btn) {
     const content = btn.nextElementSibling;
@@ -668,6 +689,16 @@ But she has always loved blue.
     }
   }
 
+  function goTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function goBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  }
   // Improve mobile experience
   document.addEventListener('DOMContentLoaded', function() {
     // Add touch feedback for buttons
@@ -686,5 +717,6 @@ But she has always loved blue.
 </body>
 
 </html>
+
 
 
