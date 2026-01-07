@@ -260,11 +260,13 @@
 </head>
 <body>
   
-<div class="nav-buttons">
-  <button onclick="goTop()">↑</button>
+<h1 id="top">My Writings</h1>
+
+<div class="jump">
+  <a href="#bottom">
+    <button>↓ Read Latest</button>
+  </a>
 </div>
-  
-<h1>My Writings</h1>
 
 <!-- 1 -->
 <div class="card">
@@ -669,16 +671,20 @@ But she has always loved blue.
   </div>
 </div>
 
+<div id="bottom"></div>
+
+<div class="jump" style="margin-top:40px;">
+  <a href="#top">
+    <button>↑ Back to First</button>
+  </a>
+</div>
+
 <footer>
   <div class="footer-bottom">
-    <p>© <span id="current-year">2025</span> ScriptSeekers Writings | Words from the heart</p>
-    <p class="footer-quote">"Some feelings are best expressed through poetry"</p>
+    <p>© 2025 ScriptSeekers Writings</p>
+    <p>"Some feelings are best expressed through poetry"</p>
   </div>
 </footer>
-  
-<div class="nav-buttons">
-  <button onclick="goBottom()">↓</button>
-</div>
 
 <script>
   function toggle(btn) {
@@ -720,6 +726,7 @@ But she has always loved blue.
 </body>
 
 </html>
+
 
 
 
