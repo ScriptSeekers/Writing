@@ -1,0 +1,104 @@
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    padding: 15px 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 20px 0 30px;
+    padding: 0 5px;
+  }
+  
+  .card {
+    padding: 20px 0;
+    margin: 0 5px;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+  
+  .summary {
+    font-size: 13px;
+    padding-left: 8px;
+    margin-bottom: 12px;
+  }
+  
+  button {
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+  
+  .content {
+    font-size: 15px;
+    line-height: 1.7;
+    padding-left: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px 5px;
+  }
+  
+  h1 {
+    font-size: 22px;
+    margin: 15px 0 25px;
+    letter-spacing: 0.5px;
+  }
+  
+  .card {
+    padding: 18px 0;
+  }
+  
+  .title {
+    font-size: 17px;
+  }
+  
+  .summary {
+    font-size: 12px;
+    padding-left: 6px;
+    border-left-width: 1px;
+  }
+  
+  button {
+    padding: 6px 14px;
+    font-size: 13px;
+    min-width: 70px;
+  }
+  
+  .content {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 6px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 20px;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    padding: 10px 22px;
+    min-height: 44px;
+  }
+  
+  .card {
+    padding: 22px 0;
+  }
+}
