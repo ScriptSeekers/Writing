@@ -4,270 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ScriptSeekers Writings</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .nav-buttons {
-      position: fixed;
-      right: 15px;
-      bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .nav-buttons button {
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(4px);
-    }
-
-    body {
-      font-family: Georgia, serif;
-      background: #0f0f0f;
-      color: #f2f2f2;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 30px 0 40px;
-      letter-spacing: 1px;
-      font-size: 28px;
-      padding: 0 10px;
-    }
-
-    .card {
-      border-bottom: 1px solid #333;
-      padding: 25px 0;
-      margin: 0 10px;
-    }
-
-    .title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-
-    .summary {
-      color: #aaa;
-      font-style: italic;
-      margin-bottom: 15px;
-      font-size: 14px;
-      line-height: 1.5;
-      padding-left: 10px;
-      border-left: 2px solid #444;
-    }
-
-    button {
-      background: transparent;
-      color: #ffb347;
-      border: 1px solid #ffb347;
-      padding: 8px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-      margin-top: 5px;
-      font-size: 15px;
-      transition: all 0.3s ease;
-      min-width: 80px;
-    }
-
-    button:hover {
-      background: #ffb347;
-      color: #000;
-    }
-
-    button:active {
-      transform: scale(0.98);
-    }
-
-    .content {
-      display: none;
-      white-space: pre-line;
-      margin-top: 20px;
-      line-height: 1.8;
-      color: #e6e6e6;
-      padding-left: 10px;
-      border-left: 1px solid #333;
-      font-size: 16px;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-    }
-
-    /* Mobile-specific styles */
-    @media (max-width: 768px) {
-      body {
-        padding: 15px 10px;
-      }
-      
-      h1 {
-        font-size: 24px;
-        margin: 20px 0 30px;
-        padding: 0 5px;
-      }
-      
-      .card {
-        padding: 20px 0;
-        margin: 0 5px;
-      }
-      
-      .title {
-        font-size: 18px;
-      }
-      
-      .summary {
-        font-size: 13px;
-        padding-left: 8px;
-        margin-bottom: 12px;
-      }
-      
-      button {
-        padding: 7px 16px;
-        font-size: 14px;
-      }
-      
-      .content {
-        font-size: 15px;
-        line-height: 1.7;
-        padding-left: 8px;
-      }
-    }
-
-    .footer-bottom {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .footer-bottom p {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 10px 5px;
-      }
-      
-      h1 {
-        font-size: 22px;
-        margin: 15px 0 25px;
-        letter-spacing: 0.5px;
-      }
-      
-      .card {
-        padding: 18px 0;
-      }
-      
-      .title {
-        font-size: 17px;
-      }
-      
-      .summary {
-        font-size: 12px;
-        padding-left: 6px;
-        border-left-width: 1px;
-      }
-      
-      button {
-        padding: 6px 14px;
-        font-size: 13px;
-        min-width: 70px;
-      }
-      
-      .content {
-        font-size: 14px;
-        line-height: 1.6;
-        padding-left: 6px;
-      }
-    }
-
-    /* For very small screens */
-    @media (max-width: 360px) {
-      h1 {
-        font-size: 20px;
-      }
-      
-      .title {
-        font-size: 16px;
-      }
-      
-      button {
-        padding: 5px 12px;
-        font-size: 12px;
-      }
-    }
-
-    /* Improve readability on all screens */
-    @media (prefers-color-scheme: light) {
-      body {
-        background: #f5f5f5;
-        color: #222;
-      }
-      
-      .card {
-        border-bottom-color: #ddd;
-      }
-      
-      .summary {
-        color: #666;
-        border-left-color: #ccc;
-      }
-      
-      .content {
-        color: #333;
-        border-left-color: #ddd;
-      }
-      
-      button {
-        color: #ff8c00;
-        border-color: #ff8c00;
-      }
-      
-      button:hover {
-        background: #ff8c00;
-        color: #fff;
-      }
-    }
-
-    /* Smooth scrolling for better mobile experience */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Touch-friendly tap targets */
-    @media (hover: none) and (pointer: coarse) {
-      button {
-        padding: 10px 22px;
-        min-height: 44px;
-      }
-      
-      .card {
-        padding: 22px 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
 </head>
 <body>
   
 <h1 id="top">My Writings</h1>
 
-<div class="jump">
-  <a href="#bottom">
-    <button>↓</button>
-  </a>
+<div class="nav-buttons">
+  <button onclick="goTop()" title="Go to top">↑</button>
+  <button onclick="goBottom()" title="Go to bottom">↓</button>
 </div>
-
 <!-- 1 -->
 <div class="card">
   <div class="title">Ishq Ki Aag</div>
@@ -275,13 +22,13 @@
   <button onclick="toggle(this)">Read</button>
   <div class="content">
 Maine pucha apne Ishq se,
-“Kya main kar sakta hoon tumhari fikar?”
+"Kya main kar sakta hoon tumhari fikar?"
 Ishq ne dhadkan chhoo kar kaha,
-“Jo tumhara dil chahe, wahi sachkar.”
+"Jo tumhara dil chahe, wahi sachkar."
 
 Dil ne cheekh kar kaha,
-“Main tumhara hona chahta hoon…
-Poora, bina kisi bhi shart ke.”
+"Main tumhara hona chahta hoon…
+Poora, bina kisi bhi shart ke."
 
 Par main dil de na saka,
 Kyuki yeh bechaara dil
@@ -300,8 +47,7 @@ Ek taraf teri aankhen,
 jaadu tona ek taraf.
   </div>
 </div>
-
-<!-- 2 -->
+  <!-- 2 -->
 <div class="card">
   <div class="title">Prem Ki Kavita</div>
   <div class="summary">A quiet, poetic metaphor for love that is expressed through absence, pauses, and interpretation—where meaning depends on how deeply the reader feels.</div>
@@ -677,7 +423,6 @@ But she has always loved blue.
   <div class="summary">Samjho to ehsaas hoon… warna sirf ek kahani.</div>
   <button onclick="toggle(this)">Read</button>
   <div class="content">
-
 Rakh sako to ek nishani hu mai,  
 Kho do to sirf ek kahani hu mai.  
 
@@ -710,7 +455,6 @@ Kho do to sirf ek kahani hu mai.
   <div class="summary">Log kehte hain main badal gaya… sach ye hai, logon ne badal diya.</div>
   <button onclick="toggle(this)">Read</button>
   <div class="content">
-
 Khamosh chehre par  
 Hazaaro pehre hote hai,  
 Hasti aankhon me bhi  
@@ -737,52 +481,11 @@ Apno ki hi meharbani hai.
 </footer>
 
   <div id="bottom"></div>
-<div class="jump" style="margin-top:40px;">
-  <a href="#top">
-    <button>↑</button>
-  </a>
-</div>
-<script>
-  function toggle(btn) {
-    const content = btn.nextElementSibling;
-    content.style.display = content.style.display === "block" ? "none" : "block";
-    btn.innerText = content.style.display === "block" ? "Hide" : "Read";
-    
-    // Smooth scroll to show more content on mobile
-    if (content.style.display === "block" && window.innerWidth < 768) {
-      content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }
 
-  function goTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function goBottom() {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth"
-    });
-  }
-  
-  // Improve mobile experience
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add touch feedback for buttons
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(btn => {
-      btn.addEventListener('touchstart', function() {
-        this.style.transform = 'scale(0.98)';
-      });
-      btn.addEventListener('touchend', function() {
-        this.style.transform = 'scale(1)';
-      });
-    });
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
+
 
 
 
