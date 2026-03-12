@@ -4,7 +4,7 @@ A minimalist, mobile-first poetry and prose showcase built using pure HTML, CSS,
 This project focuses on **reading experience over features** — no frameworks, no distractions, just words.
 
 # Link of Site
-https://scriptseekerswritings.netlify.app/
+https://scriptseekerswritings.vercel.app/
 ---
 
 ## What This Project Is
