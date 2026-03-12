@@ -6,8 +6,37 @@
   
   h1 {
     font-size: 24px;
-    margin: 20px 0 30px;
+    margin: 20px 0 15px;
     padding: 0 5px;
+  }
+
+  .section-nav {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .section-nav a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .section-header {
+    font-size: 20px;
+    margin: 35px 5px 15px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 20px 5px;
+  }
+
+  .category-card {
+    padding: 30px 15px;
+  }
+
+  .category-card h3 {
+    font-size: 18px;
   }
   
   .card {
